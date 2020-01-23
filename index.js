@@ -7,16 +7,9 @@ var workbox;
 
 const defaultServiceWorkerFileUrl = './sw.js';
 const defaultServiceWorkerScope = '/';
-const defaultTimeout = 10000;
+const defaultTimeout = 6000;
 const defaultLabelText = 'A new version is available 💎';
 const defaultReloadTextColor = '#18ffff';
-// const styles = `
-//     <style>
-//         :root {
-//             --mdc-snackbar-action-color: ${defaultReloadTextColor};
-//         }
-//     </style>
-// `;
 
 const snackbarHTMLComponents = `
     <mwc-button slot="action">RELOAD</mwc-button>
@@ -40,6 +33,7 @@ class MdcPwaReload extends Snackbar {
         this.addEventListener('MDCSnackbar:closed', this.onClose);
 
         if ('serviceWorker' in navigator) {
+            // TODO test in a site that has already a service worker registered. Maybe need to check for a SW registation before registering.
             workbox = new Workbox(this.swUrl, { scope: this.swScope });
             this.listenForNewVersion();
             workbox.register();
@@ -125,7 +119,7 @@ class MdcPwaReload extends Snackbar {
         if (reason === 'action') {
             // * update service worker and reload page
             this.updateAndReload();
-
+            
         } else {
             // ? reason = dismiss
             if (typeof this.onDismiss === 'function') {
