@@ -84,18 +84,18 @@ class MdcPwaReload extends Snackbar {
                 this.onDismiss = newValue;
                 break;
             default:
-                console.log(`attributeChangedCallback: Unknown attribute has changed`, name);
+                console.log(`MdcPwaReload: Unknown attribute has been added`, name);
                 break;
         }
     }
 
     disconnectedCallback() {
-        console.log('Custom element removed from page.');
+        console.log('MdcPwaReload: Custom element removed from page.');
         // TODO Is it necessary to remove Service Worker event listeners?
     }
 
     async listenForNewVersion() {
-        console.log("ReloadSnackbar -> listenForNewVersion");
+        console.log("MdcPwaReload -> Attaching event listeners onto service worker for new versions.");
         workbox.addEventListener('waiting' , () => {
             // !
             console.warn(`Make sure you include the following in your Service Worker JS file:
@@ -110,7 +110,7 @@ class MdcPwaReload extends Snackbar {
     }
 
     onNewVersionFound() {
-        console.log("ReloadSnackbar -> New version has been found! Opening snackbar...");
+        console.log("MdcPwaReload -> New version has been found! Opening snackbar...");
         this.open();
     }
 
@@ -129,7 +129,7 @@ class MdcPwaReload extends Snackbar {
     }
 
     updateAndReload() {
-        // console.log("ReloadSnackbar -> updateAndReload");
+        console.log("MdcPwaReload -> Updating service worker and reloading the page.");
         workbox.messageSW({ type: 'NEW_VERSION'});
         workbox.addEventListener('controlling', () => window.location.reload());
         
