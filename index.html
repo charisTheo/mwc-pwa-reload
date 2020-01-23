@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Custom elements</title>
+    <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+</head>
+<body>
+    <main>
+        <h2>PWA Reload Button: Material Web Component</h2>
+        <reload-snackbar 
+            sw-url="./sw.js" 
+            sw-scope="/"
+            timeout="8000"
+            reload-text-color="#d500f9"
+            on-dismiss="alert('No new version for you!')"
+        ></reload-snackbar>
+    </main>
+
+</body>
+</html>
