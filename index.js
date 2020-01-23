@@ -25,7 +25,7 @@ const snackbarHTMLComponents = `
     </mwc-icon-button>
 `;
 
-class ReloadSnackbar extends Snackbar {
+class MdcPwaReload extends Snackbar {
     constructor() {
         super();
         // Material config
@@ -142,6 +142,4 @@ class ReloadSnackbar extends Snackbar {
     }
 }
 
-window.customElements.define('reload-snackbar', ReloadSnackbar);
-
-document.querySelector('reload-snackbar').open();
+window.customElements.define('mdc-pwa-reload', MdcPwaReload);
