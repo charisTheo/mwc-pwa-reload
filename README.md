@@ -1,13 +1,13 @@
 # <p align="center">&lt;mwc-pwa-reload&gt;</p>
 
+<p align="center">
+  <img src="https://github.com/charisTheo/mwc-pwa-reload/blob/master/screenshot.png?raw=true" alt="Example material PWA reload snackbar"/>
+</p>
+
 A snack-bar for PWAs that gives the user the option to **reload the page on a new version** of the web app.
 
 [![npm version](https://badge.fury.io/js/mwc-pwa-reload.svg)](//npmjs.com/package/mwc-pwa-reload)
 [![Dependency status](https://david-dm.org/charisTheo/mwc-pwa-reload.svg)](//npmjs.com/package/mwc-pwa-reload?activeTab=dependencies)
-
-<p align="center">
-  <img src="https://github.com/charisTheo/mwc-pwa-reload/blob/master/screenshot.png?raw=true" alt="Example material PWA reload snackbar"/>
-</p>
 
 ----
 
@@ -15,6 +15,10 @@ A snack-bar for PWAs that gives the user the option to **reload the page on a ne
 
 ### 🧱 [Material Components for the Web](https://github.com/material-components/material-components-web) (on top of [Material Snackbar](https://github.com/material-components/material-components-web-components/tree/master/packages/snackbar)).
 ### 🧱 [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-window)
+
+<p align="center">
+  <img src="https://github.com/charisTheo/mwc-pwa-reload/blob/master/demo.gif?raw=true" alt="A demo of the reload material snackbar"/>
+</p>
 
 ## 🚀 Getting started
 
