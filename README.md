@@ -2,11 +2,18 @@
 
 A snack-bar for PWAs that gives the user the option to **reload the page on a new version** of the web app.
 
-👷‍♂️ Build with [Material Components for the Web](https://github.com/material-components/material-components-web) on top of the [Material Snackbar](https://github.com/material-components/material-components-web-components/tree/master/packages/snackbar).
+## 👷‍ Build with 
+
+### 🧱 [Material Components for the Web](https://github.com/material-components/material-components-web) (on top of [Material Snackbar](https://github.com/material-components/material-components-web-components/tree/master/packages/snackbar)).
+### 🧱 [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-window)
+
+<br>
 
 <p align="center">
   <img src="https://github.com/charisTheo/mwc-pwa-reload/blob/master/screenshot.png?raw=true" alt="Example material PWA reload snackbar"/>
 </p>
+
+<br>
 
 ----
 ## 🚀 Getting started
