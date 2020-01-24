@@ -18,7 +18,7 @@ const snackbarHTMLComponents = `
     </mwc-icon-button>
 `;
 
-class MdcPwaReload extends Snackbar {
+class MwcPwaReload extends Snackbar {
     constructor() {
         super();
         // Material config
@@ -88,20 +88,20 @@ class MdcPwaReload extends Snackbar {
                 this.onDismiss = newValue;
                 break;
             default:
-                this.logWarn(`MdcPwaReload: Unknown attribute has been added`, name);
+                this.logWarn(`MwcPwaReload -> Unknown attribute has been added`, name);
                 break;
         }
     }
 
     disconnectedCallback() {
-        this.logInfo('MdcPwaReload: Custom element removed from page.');
+        this.logInfo('MwcPwaReload -> Custom element removed from page.');
         // TODO Is it necessary to remove Service Worker event listeners?
     }
 
     async listenForNewVersion() {
-        this.logInfo("MdcPwaReload -> Attaching Service Worker event listeners for any new versions.");
+        this.logInfo("MwcPwaReload -> Attaching Service Worker event listeners for any new versions.");
         workbox.addEventListener('waiting' , () => {
-            this.logWarn(`Make sure you include the following in your Service Worker JS file:
+            this.logWarn(`MwcPwaReload -> Make sure you include the following in your Service Worker JS file:
                 addEventListener('message', event => {
                     if (event.data && event.data.type === 'NEW_VERSION') {
                         skipWaiting();
@@ -113,7 +113,7 @@ class MdcPwaReload extends Snackbar {
     }
 
     onNewVersionFound() {
-        this.logInfo("MdcPwaReload -> New version has been found! Opening snackbar...");
+        this.logInfo("MwcPwaReload -> New version has been found! Opening snackbar...");
         this.open();
     }
 
@@ -132,11 +132,11 @@ class MdcPwaReload extends Snackbar {
     }
 
     updateAndReload() {
-        this.logInfo("MdcPwaReload -> Updating service worker and reloading the page.");
+        this.logInfo("MwcPwaReload -> Updating service worker and reloading the page.");
         workbox.messageSW({ type: 'NEW_VERSION'});
         workbox.addEventListener('controlling', () => window.location.reload());
         
     }
 }
 
-window.customElements.define('mdc-pwa-reload', MdcPwaReload);
+window.customElements.define('mwc-pwa-reload', MwcPwaReload);

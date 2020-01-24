@@ -1,10 +1,10 @@
 {
-  "name": "mdc-pwa-reload",
+  "name": "mwc-pwa-reload",
   "version": "1.0.0",
   "description": "A reload snack-bar for PWA which gives the user the option to reload the page to see the new version of the web app. Build with Material Components for the Web.",
   "author": "charisTheo",
   "license": "MIT",
-  "repository": "https://github.com/charisTheo/mdc-pwa-reload",
+  "repository": "https://github.com/charisTheo/mwc-pwa-reload",
   "main": "dist/index.js",
   "scripts": {
     "start": "webpack-dev-server --open",

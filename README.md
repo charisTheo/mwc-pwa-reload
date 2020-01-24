@@ -1,11 +1,11 @@
-# <p align="center">&lt;mdc-pwa-reload&gt;</p>
+# <p align="center">&lt;mwc-pwa-reload&gt;</p>
 
 A snack-bar for PWAs that gives the user the option to **reload the page on a new version** of the web app. 
 
 👷‍♂️ Build with [Material Components for the Web](https://github.com/material-components/material-components-web) on top of the [Material Snackbar](https://github.com/material-components/material-components-web-components/tree/master/packages/snackbar).
 
 <p align="center">
-  <img src="https://github.com/charisTheo/mdc-pwa-reload/blob/master/screenshot.png?raw=true" alt="Example material PWA reload snackbar"/>
+  <img src="https://github.com/charisTheo/mwc-pwa-reload/blob/master/screenshot.png?raw=true" alt="Example material PWA reload snackbar"/>
 </p>
 
 ----
@@ -19,9 +19,9 @@ A snack-bar for PWAs that gives the user the option to **reload the page on a ne
           }
         });
 
-2. Include the `<mdc-pwa-reload>` element inside your `index.html` file:
+2. Include the `<mwc-pwa-reload>` element inside your `index.html` file:
 
-        <mdc-pwa-reload></mdc-pwa-reload>
+        <mwc-pwa-reload></mwc-pwa-reload>
 
 ## 📚 API Docs
 > 💡 For the full list look at the [Material Snackbar Docs](https://github.com/material-components/material-components-web-components/tree/master/packages/snackbar#example-usage)
@@ -56,7 +56,7 @@ A snack-bar for PWAs that gives the user the option to **reload the page on a ne
 
 #### JavaScript API Example
 
-    const mSnackbar = document.querySelector('mdc-pwa-reload');
+    const mSnackbar = document.querySelector('mwc-pwa-reload');
     mSnackbar.swUrl = './service-worker.js';
     mSnackbar.swScope = '/';
     mSnackbar.labelText = 'Hello there! New version in town!';
@@ -69,15 +69,15 @@ A snack-bar for PWAs that gives the user the option to **reload the page on a ne
 You can either configure the component using JavaScript or even by HTML attributes.
 
 #### HTML API Example
-    <mdc-pwa-reload 
+    <mwc-pwa-reload 
       sw-url="./service-worker.js" 
       sw-scope="/"
       timeout="8000"
       reload-text-color="#d500f9"
-    ></mdc-pwa-reload>
+    ></mwc-pwa-reload>
 
 ## Logging
 
 > Logging is enabled only when the component has a `dev` attibute like so:
 
-    <mdc-pwa-reload dev></mdc-pwa-reload>
+    <mwc-pwa-reload dev></mwc-pwa-reload>
