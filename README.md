@@ -22,9 +22,17 @@ A snack-bar for PWAs that gives the user the option to **reload the page on a ne
 
        npm install mwc-pwa-reload
 
-2. Import it inside your app JavaScript file _(ex: `app.js`)_
+2. Import component
 
-       import 'mwc-pwa-reload';
+   * Inside your app's JavaScript file _(ex: `app.js`)_
+
+         import 'mwc-pwa-reload';
+
+    **OR**
+
+    * Add a `<script>` tag in an HTML file _(ex: `index.html`)_ 
+
+          <script src="./node_modules/mwc-pwa-reload/dist/index.js"></script>
 
 3. Add this listener to your Service Worker file _(ex: `sw.js`)_
 
