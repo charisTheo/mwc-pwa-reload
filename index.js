@@ -31,8 +31,8 @@ class MwcPwaReload extends Snackbar {
         this.swScope = this.getAttribute('sw-scope');
 
         // Logging only in development
-        this.logInfo = this.getAttribute('dev') ? console.info : () => {};
-        this.logWarn = this.getAttribute('dev') ? console.warn : () => {};
+        this.logInfo = this.getAttribute('dev') === "" ? console.info.bind(console) : () => {};
+        this.logWarn = this.getAttribute('dev') === "" ? console.warn.bind(console) : () => {};
         
         this.addEventListener('MDCSnackbar:closed', this.onClose);
 

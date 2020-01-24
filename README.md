@@ -1,6 +1,6 @@
 # <p align="center">&lt;mwc-pwa-reload&gt;</p>
 
-A snack-bar for PWAs that gives the user the option to **reload the page on a new version** of the web app. 
+A snack-bar for PWAs that gives the user the option to **reload the page on a new version** of the web app.
 
 👷‍♂️ Build with [Material Components for the Web](https://github.com/material-components/material-components-web) on top of the [Material Snackbar](https://github.com/material-components/material-components-web-components/tree/master/packages/snackbar).
 
@@ -11,7 +11,15 @@ A snack-bar for PWAs that gives the user the option to **reload the page on a ne
 ----
 ## 🚀 Getting started
 
-1. Add this in your Service Worker (`sw.js`) file:
+1. Inside your project directory run 
+
+       npm install mwc-pwa-reload
+
+2. Import it inside your app JavaScript file _(ex: `app.js`)_
+
+       import 'mwc-pwa-reload';
+
+3. Add this listener to your Service Worker file _(ex: `sw.js`)_
 
         addEventListener('message', event => {
           if (event.data && event.data.type === 'NEW_VERSION') {
@@ -19,12 +27,14 @@ A snack-bar for PWAs that gives the user the option to **reload the page on a ne
           }
         });
 
-2. Include the `<mwc-pwa-reload>` element inside your `index.html` file:
+4. Include the `<mwc-pwa-reload>` element inside your app HTML file _(ex: `index.html`)_
 
         <mwc-pwa-reload></mwc-pwa-reload>
 
+> _**In the above example the component will run on default options that are explained below**_ 👇👇 
+
 ## 📚 API Docs
-> 💡 For the full list look at the [Material Snackbar Docs](https://github.com/material-components/material-components-web-components/tree/master/packages/snackbar#example-usage)
+> 💡 _For the full list look at the [Material Snackbar Docs](https://github.com/material-components/material-components-web-components/tree/master/packages/snackbar#example-usage)_
 
 ### JavaScript
 
@@ -57,6 +67,7 @@ A snack-bar for PWAs that gives the user the option to **reload the page on a ne
 #### JavaScript API Example
 
     const mSnackbar = document.querySelector('mwc-pwa-reload');
+
     mSnackbar.swUrl = './service-worker.js';
     mSnackbar.swScope = '/';
     mSnackbar.labelText = 'Hello there! New version in town!';
