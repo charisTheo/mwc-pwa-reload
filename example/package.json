@@ -1,26 +1,14 @@
 {
-  "name": "mdc-pwa-reload",
+  "name": "custom-elements",
   "version": "1.0.0",
-  "description": "A reload snack-bar for PWA which gives the user the option to reload the page to see the new version of the web app. Build with Material Components for the Web.",
-  "author": "charisTheo",
-  "license": "MIT",
-  "repository": "https://github.com/charisTheo/mdc-pwa-reload",
-  "main": "dist/index.js",
-  "scripts": {
-    "start": "webpack-dev-server --open",
-    "build": "webpack --mode=production",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "",
+  "main": "index.js",
   "dependencies": {
     "@material/mwc-button": "^0.12.0",
     "@material/mwc-icon-button": "^0.12.0",
     "@material/mwc-snackbar": "^0.12.0",
     "@webcomponents/webcomponentsjs": "^2.4.1",
     "workbox-window": "^4.3.1"
-  },
-  "engines": {
-    "node": ">=8",
-    "npm": ">=5"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
@@ -37,7 +25,11 @@
     "webpack-dev-server": "^3.10.1",
     "workbox-webpack-plugin": "^4.3.1"
   },
-  "files": [
-    "dist"
-  ]
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "build": "rm -r build && webpack --mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }

@@ -54,7 +54,7 @@ A snack-bar for PWAs that gives the user the option to **reload the page on a ne
   * **Default = `null`**
   * ⚠️ Need to be between 4000 and 10000
 
-#### API Example
+#### JavaScript API Example
 
     const mSnackbar = document.querySelector('mdc-pwa-reload');
     mSnackbar.swUrl = './service-worker.js';
@@ -66,7 +66,9 @@ A snack-bar for PWAs that gives the user the option to **reload the page on a ne
   
 ### HTML
 
-#### API Example
+You can either configure the component using JavaScript or even by HTML attributes.
+
+#### HTML API Example
     <mdc-pwa-reload 
       sw-url="./service-worker.js" 
       sw-scope="/"
@@ -74,3 +76,8 @@ A snack-bar for PWAs that gives the user the option to **reload the page on a ne
       reload-text-color="#d500f9"
     ></mdc-pwa-reload>
 
+## Logging
+
+> Logging is enabled only when the component has a `dev` attibute like so:
+
+    <mdc-pwa-reload dev></mdc-pwa-reload>

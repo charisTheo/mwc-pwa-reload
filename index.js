@@ -29,6 +29,10 @@ class MdcPwaReload extends Snackbar {
         this.timeout = defaultTimeout;
         this.swUrl = this.getAttribute('sw-url');
         this.swScope = this.getAttribute('sw-scope');
+
+        // Logging only in development
+        this.logInfo = this.getAttribute('dev') ? console.info : () => {};
+        this.logWarn = this.getAttribute('dev') ? console.warn : () => {};
         
         this.addEventListener('MDCSnackbar:closed', this.onClose);
 
@@ -84,21 +88,20 @@ class MdcPwaReload extends Snackbar {
                 this.onDismiss = newValue;
                 break;
             default:
-                console.log(`MdcPwaReload: Unknown attribute has been added`, name);
+                this.logWarn(`MdcPwaReload: Unknown attribute has been added`, name);
                 break;
         }
     }
 
     disconnectedCallback() {
-        console.log('MdcPwaReload: Custom element removed from page.');
+        this.logInfo('MdcPwaReload: Custom element removed from page.');
         // TODO Is it necessary to remove Service Worker event listeners?
     }
 
     async listenForNewVersion() {
-        console.log("MdcPwaReload -> Attaching event listeners onto service worker for new versions.");
+        this.logInfo("MdcPwaReload -> Attaching Service Worker event listeners for any new versions.");
         workbox.addEventListener('waiting' , () => {
-            // !
-            console.warn(`Make sure you include the following in your Service Worker JS file:
+            this.logWarn(`Make sure you include the following in your Service Worker JS file:
                 addEventListener('message', event => {
                     if (event.data && event.data.type === 'NEW_VERSION') {
                         skipWaiting();
@@ -110,7 +113,7 @@ class MdcPwaReload extends Snackbar {
     }
 
     onNewVersionFound() {
-        console.log("MdcPwaReload -> New version has been found! Opening snackbar...");
+        this.logInfo("MdcPwaReload -> New version has been found! Opening snackbar...");
         this.open();
     }
 
@@ -129,7 +132,7 @@ class MdcPwaReload extends Snackbar {
     }
 
     updateAndReload() {
-        console.log("MdcPwaReload -> Updating service worker and reloading the page.");
+        this.logInfo("MdcPwaReload -> Updating service worker and reloading the page.");
         workbox.messageSW({ type: 'NEW_VERSION'});
         workbox.addEventListener('controlling', () => window.location.reload());
         
