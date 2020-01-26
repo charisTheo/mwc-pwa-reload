@@ -57,31 +57,30 @@ A snack-bar for PWAs that gives the user the option to **reload the page on a ne
 
 ### JavaScript
 
-* `swUrl` - Local Service Worker JavaScript file url
+* `swUrl: String` - Local Service Worker JavaScript file url
   * **Default = `'./sw.js'`**
   
   
-* `swScope` - The scope by which Service Worker has been registered
+* `swScope: String` - The scope by which Service Worker has been registered
   * **Default = `'/'`**
   
   
-* `labelText` - Snackbar main text
+* `labelText: String` - Snackbar main text
   * **Default = `'A new version is available 💎'`**
   
   
-* `reloadTextColor` - Reload action button color
+* `reloadTextColor: String` - Reload action button color
   * **Default = `'#18ffff'`**
   * Change color also with the CSS variable `--mdc-snackbar-action-color`
   > More here 👉 [Material Color Palette](https://material.io/archive/guidelines/style/color.html#color-color-palette)
   
   
-* `timeout` - Snackbar's timeout until it is dismissed (ms)
+* `timeout: String|Number` - Snackbar's timeout until it is dismissed (ms)
   * **Default = `6000`**
-  
-  
-* `onDismiss` - Callback when snackbar has been dismissed after timeout or by clicking on the **X** button.
-  * **Default = `null`**
   * ⚠️ Need to be between 4000 and 10000
+  
+* `onDismiss: Function` - Callback when snackbar has been dismissed after timeout or by clicking on the **X** button.
+  * **Default = `null`**
 
 #### JavaScript API Example
 
