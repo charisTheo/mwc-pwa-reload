@@ -1,8 +1,14 @@
 {
   "name": "mwc-pwa-reload",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A reload snack-bar for PWA which gives the user the option to reload the page to see the new version of the web app. Build with Material Components for the Web.",
-  "keywords": ["workbox", "pwa", "material design", "material", "snackbar"],
+  "keywords": [
+    "workbox",
+    "pwa",
+    "material design",
+    "material",
+    "snackbar"
+  ],
   "author": "charisTheo",
   "license": "MIT",
   "repository": "https://github.com/charisTheo/mwc-pwa-reload",
