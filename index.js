@@ -35,6 +35,7 @@ class MwcPwaReload extends Snackbar {
         this.logWarn = this.getAttribute('dev') === "" ? console.warn.bind(console) : () => {};
         
         this.addEventListener('MDCSnackbar:closed', this.onClose);
+        this.style.whiteSpace = 'initial'; // ! fixes malformed layout if white-space is set to pre-wrap;
 
         if ('serviceWorker' in navigator) {
             // TODO test in a site that has already a service worker registered. Maybe need to check for a SW registation before registering.
