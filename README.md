@@ -4,7 +4,7 @@
   <img src="https://github.com/charisTheo/mwc-pwa-reload/blob/master/screenshot.png?raw=true" alt="Example material PWA reload snackbar"/>
 </p>
 
-A snack-bar for PWAs that gives the user the option to **reload the page on a new version** of the web app.
+A snack-bar for PWAs that gives the user the option to **reload the page on a new version** of the web app. If the snackbar is dismissed, the Service Worker will remain in the waiting phase and the new version of the website will not be loaded.
 
 [![npm version](https://badge.fury.io/js/mwc-pwa-reload.svg)](//npmjs.com/package/mwc-pwa-reload)
 [![Dependency status](https://david-dm.org/charisTheo/mwc-pwa-reload.svg)](//npmjs.com/package/mwc-pwa-reload?activeTab=dependencies)
@@ -22,6 +22,10 @@ A snack-bar for PWAs that gives the user the option to **reload the page on a ne
 
 ## 🚀 Getting started
 
+### Install
+
+- #### npm
+
 1. Inside your project directory run 
 
        npm install mwc-pwa-reload
@@ -38,7 +42,13 @@ A snack-bar for PWAs that gives the user the option to **reload the page on a ne
 
           <script src="./node_modules/mwc-pwa-reload/dist/index.js"></script>
 
-3. Add this listener to your Service Worker file _(ex: `sw.js`)_
+- #### web
+
+      <script type="module" src="https://unpkg.com/mwc-pwa-reload"></script>
+
+### Configure Service Worker
+
+1. Add this listener to your Service Worker file _(ex: `sw.js`)_
 
         addEventListener('message', event => {
           if (event.data && event.data.type === 'NEW_VERSION') {
@@ -46,11 +56,17 @@ A snack-bar for PWAs that gives the user the option to **reload the page on a ne
           }
         });
 
-4. Include the `<mwc-pwa-reload>` element inside your app HTML file _(ex: `index.html`)_
+### Include component in HTML
+
+1. Include the `<mwc-pwa-reload>` element inside your HTML file _(ex: `index.html`)_
 
         <mwc-pwa-reload></mwc-pwa-reload>
 
-> _**In the above example the component will run on default options that are explained below**_ 👇👇 
+<br>
+
+> ⚠️ The first time you push your code live the snackbar will _not_ be shown, however it will be shown on every new version _after_ that.
+
+> ⚠️ In the above example the component will run on default options that are explained below 👇👇 
 
 ## 📚 API Docs
 > 💡 _For the full list look at the [Material Snackbar Docs](https://github.com/material-components/material-components-web-components/tree/master/packages/snackbar#example-usage)_
