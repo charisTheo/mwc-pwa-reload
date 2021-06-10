@@ -9,7 +9,7 @@
     "material",
     "snackbar"
   ],
-  "author": "charisTheo",
+  "author": "charistheo",
   "license": "MIT",
   "repository": "https://github.com/charisTheo/mwc-pwa-reload",
   "main": "dist/index.js",
